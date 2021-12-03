@@ -25,10 +25,11 @@
 
 /**
  * Init Nextion.  
- * 
+ *
+ * @param baudrate - the baudrate for communication with the display 
  * @return true if success, false for failure. 
  */
-bool nexInit(void);
+bool nexInit(uint32_t baudrate);
 
 /**
  * Listen touch event and calling callbacks attached before.
@@ -51,5 +52,6 @@ bool recvRetNumber(uint32_t *number, uint32_t timeout = 150);
 uint16_t recvRetString(char *buffer, uint16_t len, uint32_t timeout = 150);
 void sendCommand(const char* cmd);
 bool recvRetCommandFinished(uint32_t timeout = 150);
+bool setBaudrate(uint32_t baudrate); 
 
 #endif /* #ifndef __NEXHARDWARE_H__ */
